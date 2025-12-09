@@ -35,7 +35,7 @@ public class SsoController {
             data.setTokenId("");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of(
                     "responseCode", "E000001",
-                    "responseMessage", "ไม่สามารถบันทึกข้อมูลลงฐานข้อมูลได้",
+                    "responseMessage", e.getMessage(),
                     "responseData", data
             ));
         } catch (

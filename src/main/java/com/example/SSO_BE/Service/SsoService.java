@@ -51,51 +51,24 @@ public class SsoService {
     }
 
     public void validfield(SsoRequestDTO ssoRequestDTO) {
-        if (ssoRequestDTO == null) {
+
+        if (ssoRequestDTO == null
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSsoType())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSystemId())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSystemName())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSystemTransactions())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSystemPrivileges())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSystemUserGroup())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getSystemLocationGroup())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getUserId())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getUserFullName())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getUserRdOfficeCode())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getUserOfficeCode())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getClientLocation())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getLocationMachineNumber())
+                || ObjectUtils.isEmpty(ssoRequestDTO.getTokenId())
+        ) {
             throw new IllegalArgumentException("ไม่สามารถบันทึกข้อมูลลงฐานข้อมูลได้");
         }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSsoType())) {
-            throw new IllegalArgumentException("ssoType ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSystemId())) {
-            throw new IllegalArgumentException("systemId ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSystemName())) {
-            throw new IllegalArgumentException("systemName ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSystemTransactions())) {
-            throw new IllegalArgumentException("systemTransactions ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSystemPrivileges())) {
-            throw new IllegalArgumentException("systemPrivileges ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSystemUserGroup())) {
-            throw new IllegalArgumentException("systemUserGroup ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getSystemLocationGroup())) {
-            throw new IllegalArgumentException("systemLocationGroup ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getUserId())) {
-            throw new IllegalArgumentException("userId ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getUserFullName())) {
-            throw new IllegalArgumentException("userFullName ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getUserRdOfficeCode())) {
-            throw new IllegalArgumentException("userRdOfficeCode ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getUserOfficeCode())) {
-            throw new IllegalArgumentException("userOfficeCode ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getClientLocation())) {
-            throw new IllegalArgumentException("clientLocation ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getLocationMachineNumber())) {
-            throw new IllegalArgumentException("locationMachineNumber ไม่สามารถเป็นค่าว่างได้");
-        }
-        if (ObjectUtils.isEmpty(ssoRequestDTO.getTokenId())) {
-            throw new IllegalArgumentException("tokenId ไม่สามารถเป็นค่าว่างได้");
-        }
     }
-
 }
